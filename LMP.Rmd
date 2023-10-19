@@ -50,3 +50,80 @@ abline(Model1, col = "red")
 
 for an increase of 1 in arm strength, sim score increases by 0.0545.
 
+
+```{r}
+newdata = data.frame(ARM = 88, GRIP = 94)
+predict.lm(Model1, newdata, interval='prediction')
+```
+
+
+
+
+##Model 2
+
+find an equation that expresses SIMS as a function of GRIP
+
+## Results
+
+### Graphical Results
+
+```{r}
+plot(SIMS~GRIP,data=data)
+```
+
+As grip strength increases, sims score increases.  There is a positive trend between grip strength and sim score.
+
+
+### Numerical Results
+
+```{r}
+cor(data$SIMS, data$GRIP)
+```
+This trend shows that we have a positive coloration of 0.63
+
+
+### inference
+
+
+
+
+```{r}
+plot(SIMS~GRIP,data=data)
+abline(Model1, col = "blue")
+```
+
+for an increase of 1 in arm strength, sim score increases by 0.045.
+
+
+##Model 3
+find an equation that expresses SIMS as a function of ARM
+
+
+## Results
+
+
+### Graphical Results
+
+There are no graphical results for model3 because i cant put to variables on one axis.
+
+
+### Numerical results 
+
+There are no numerical results since we have SIM as a function of two variables.
+
+### inference
+
+```{r}
+Model3 = lm(SIMS~ARM, data = data)
+print(summary(Model3))
+```
+
+```{r}
+newdata = data.frame(ARM = 88, GRIP = 94)
+predict.lm(Model3,newdata, interval='prediction')
+```
+
+
+
+
+
