@@ -1,0 +1,37 @@
+---
+title: "LinearModulewithPrediction"
+author: "David"
+date: "2023-10-19"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+data <- read.csv(file="https://onlinestatbook.com/case_studies_rvls/physical_strength/data.txt",sep="",header=TRUE)  
+```
+
+
+
+##Model 1
+
+find an equation that expresses SIMS as a function of ARM
+
+## Results
+
+### Graphical Results
+
+
+### Numerical Results
+
+
+### inference
+
+```{r}
+Model1 = lm(SIMS~ARMS, data = data)
+print(summary(Model1))
+```
+
+```{r}
+plot(data$SIMS, data$ARM)
+```
+
